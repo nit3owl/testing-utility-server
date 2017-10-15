@@ -5,8 +5,9 @@ let app = express();
 
 const ROOT = '/testing-utility';
 
-let Controller = require('./Controller');
+let Controller = require('./controllers/Controller');
+let DummyDataController = require('./controllers/DummyDataController');
 app.use(ROOT, Controller);
+app.use(ROOT + DummyDataController.getPath(), DummyDataController);
 
 module.exports = app;
-
