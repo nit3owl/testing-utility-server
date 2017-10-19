@@ -1,0 +1,52 @@
+.header {
+  background-color: #222;
+  height: 40px;
+  padding: 10px;
+  color: white;
+}
+
+.footer {
+  background-color: #222;
+  height: 40px;
+  padding: 10px;
+  color: white;
+  position: fixed; 
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.icon {
+  text-align: center;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.header-text {
+  vertical-align: middle;
+  font-family: arial;
+  font-size: 1.5em;
+}
+
+.temp-message {
+  font-family: arial;
+  font-size: 3em;
+  text-align: center;
+  vertical-align: middle;
+  padding: 20px;
+}
+
+.title {
+  font-size: 1.5em;
+}
+
+.intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
