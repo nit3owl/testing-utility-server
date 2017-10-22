@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
-import '../style/App.css';
-import '../style/font-awesome-4.7.0/css/font-awesome.min.css'
+import NavElement from './NavElement';
 
 class Header extends Component {
+
+    constructor(props) {
+        super();
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick(e) {
+        this.props.onClick(e);
+    }
 
     render() {
         return (
             <div className='header'>
-                <i className='fa fa-home fa-2x icon' aria-hidden='true'></i><span className='header-text'>Home</span>
-                <i className='fa fa-list fa-2x icon' aria-hidden='true'></i><span className='header-text'>Documentation</span>
+                <NavElement title='Home' onClick={this.handleClick} />
+                <NavElement title='Documentation' onClick={this.handleClick} />
             </div>
         );
     }

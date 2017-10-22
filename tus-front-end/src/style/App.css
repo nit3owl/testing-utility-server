@@ -5,6 +5,10 @@
   color: white;
 }
 
+.body {
+  font-family: "Arial Black"
+}
+
 .footer {
   background-color: #222;
   height: 40px;
@@ -14,6 +18,11 @@
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+.nav-element:hover {
+  cursor: pointer;
+  color: #56a8e2;
 }
 
 .icon {
@@ -26,12 +35,11 @@
 
 .header-text {
   vertical-align: middle;
-  font-family: arial;
-  font-size: 1.5em;
+  font-family: "Arial Black";
+  font-size: 24px;
 }
 
 .temp-message {
-  font-family: arial;
   font-size: 3em;
   text-align: center;
   vertical-align: middle;
@@ -39,7 +47,7 @@
 }
 
 .title {
-  font-size: 1.5em;
+  font-size: 24px;
 }
 
 .intro {
