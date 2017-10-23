@@ -7,15 +7,15 @@ import './style/App.css';
 import './style/font-awesome-4.7.0/css/font-awesome.min.css'
 
 const panels = {
-    "home" : <Message message='Under Construction!' />,
-    "documentation" : <Documentation />
+    'home': <Message message='Under Construction!' />,
+    'documentation': <Documentation />
 }
 
 class App extends Component {
 
     constructor() {
         super();
-        this.state = ({activePanel: panels['home']});
+        this.state = ({ activePanel: panels['home'] });
         this.displayPanel = this.displayPanel.bind(this);
     }
 
@@ -27,10 +27,10 @@ class App extends Component {
         console.log(id + ' was clicked');
 
         let panel = panels[id];
-        if(panel === undefined)
+        if (panel === undefined)
             panel = <Message />
 
-        this.setState({activePanel: panel});
+        this.setState({ activePanel: panel });
     }
 
     render() {
@@ -38,8 +38,12 @@ class App extends Component {
 
         return (
             <div>
-                <Header onClick={this.displayPanel}/>
-                {panel}
+                <Header onClick={this.displayPanel} />
+                <div className='main'>
+                    <div className='box sidebar'>left sidebar</div>
+                    <div className='wrapper'>{panel}</div>
+                    <div className='box sidebar'>right sidebar</div>
+                </div>
                 <Footer />
             </div>
         );

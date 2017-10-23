@@ -5,12 +5,12 @@ class RouteDoc extends Component {
         super();
     }
 
-    render() { 
+    render() {
         return (
             <div>
-                <div>URI</div><div>{this.props.uri}</div>
-                <div>Methods</div><div>{this.props.methods}</div>
-                <div>Description</div><div>{this.props.description}</div>
+                <div className='box column column-small'>{this.props.methods}</div>
+                <div className='box column column-med'>{this.props.uri}</div>
+                <div className='box column column-med'>{this.props.description}</div>
             </div>
         );
     }

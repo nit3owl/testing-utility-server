@@ -20,6 +20,50 @@
   right: 0;
 }
 
+.table {
+  font-family: "Arial Black"
+}
+
+.table-header {
+  font-size: 24px;
+}
+
+.wrapper {
+  height: 100%;
+  display: table;
+  width: 100%;
+  text-align: center;
+}
+
+.box {
+  display: table-cell;
+}
+
+.sidebar {
+  width: 100px;
+  background: #56a8e2;
+  height: 100px;
+}
+
+.main {
+  height: 100%;
+  display: table;
+  width: 100%;
+}
+
+.column {
+  float: left;
+  position: relative;
+}
+
+.column-small {
+  width: 20%;
+}
+
+.column-med {
+  width: 40%;
+}
+
 .nav-element:hover {
   cursor: pointer;
   color: #56a8e2;

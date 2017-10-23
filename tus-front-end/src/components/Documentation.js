@@ -13,11 +13,11 @@ class Documentation extends Component {
         let routes = [];
         //hardcode health value for testing
         routes.push(
-            <RouteDoc 
-                key = '0'
-                url='/health' 
-                methods='GET' 
-                description='A simple health endpoint to indicate that the server is up' 
+            <RouteDoc
+                key='0'
+                uri='/health'
+                methods='GET'
+                description='A simple health endpoint to indicate that the server is up'
             />
         );
 
@@ -27,9 +27,19 @@ class Documentation extends Component {
     render() {
         let routes = this.fetchRoutes();
         return (
-            <div className='body'>
-                {routes}
+            <div>
+                <div className='main'>
+                    <div className='table'>
+                        <div className='table-header'>
+                            <span className='box column column-small'>Methods</span>
+                            <span className='box column column-med'>URI</span>
+                            <span className='box column column-med'>Description</span>
+                        </div>
+                        {routes}                
+                    </div>
+                </div>
             </div>
+
         );
     }
 }
