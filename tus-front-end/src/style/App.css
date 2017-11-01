@@ -26,12 +26,26 @@
 
 .table-header {
   font-size: 24px;
+  font-weight: bold;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background: #56a8e2;
+}
+
+.table-row {
+  font-size: 16px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background: #ffff00;
 }
 
 .wrapper {
-  height: 100%;
-  display: table;
-  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: center;
+  justify-content: center;
   text-align: center;
 }
 
@@ -39,29 +53,29 @@
   display: table-cell;
 }
 
-.sidebar {
-  width: 100px;
-  background: #56a8e2;
-  height: 100px;
-}
 
-.main {
-  height: 100%;
-  display: table;
-  width: 100%;
-}
-
-.column {
-  float: left;
-  position: relative;
+@media all and (min-width: 600px) {
+  .sidebar { 
+    flex: 1 auto; 
+    background: gray;
+    height: auto !important;
+    min-height: 100%;
+  }
 }
 
 .column-small {
-  width: 20%;
+  -webkit-flex: 1 0 0;
+  flex: 2 0 0;
 }
 
 .column-med {
-  width: 40%;
+  -webkit-flex: 2 0 0;
+  flex: 3 0 0;
+}
+
+.column-large {
+  -webkit-flex: 4 0 0;
+  flex: 8 0 0;
 }
 
 .nav-element:hover {
@@ -87,7 +101,7 @@
   font-size: 3em;
   text-align: center;
   vertical-align: middle;
-  padding: 20px;
+  padding-top: 20px;
 }
 
 .title {

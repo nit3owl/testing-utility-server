@@ -28,7 +28,7 @@ class App extends Component {
 
         let panel = panels[id];
         if (panel === undefined)
-            panel = <Message />
+            panel = <Message className='column-large'/>
 
         this.setState({ activePanel: panel });
     }
@@ -39,10 +39,10 @@ class App extends Component {
         return (
             <div>
                 <Header onClick={this.displayPanel} />
-                <div className='main'>
-                    <div className='box sidebar'>left sidebar</div>
-                    <div className='wrapper'>{panel}</div>
-                    <div className='box sidebar'>right sidebar</div>
+                <div className='wrapper'>
+                    <div className='sidebar'>left sidebar</div>
+                    {panel}
+                    <div className='sidebar'>right sidebar</div>
                 </div>
                 <Footer />
             </div>

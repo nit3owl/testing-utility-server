@@ -7,10 +7,11 @@ class RouteDoc extends Component {
 
     render() {
         return (
-            <div>
-                <div className='box column column-small'>{this.props.methods}</div>
-                <div className='box column column-med'>{this.props.uri}</div>
-                <div className='box column column-med'>{this.props.description}</div>
+            <div className='wrapper table-row'>
+                <div className='column column-small'>{this.props.methods}</div>
+                <div className='column column-small'>{this.props.uri}</div>
+                <div className='column column-large'>{this.props.description}</div>
+                <div className='column column-med'>{this.props.params}</div>
             </div>
         );
     }

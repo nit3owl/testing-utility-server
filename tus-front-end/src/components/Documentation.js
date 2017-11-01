@@ -18,6 +18,16 @@ class Documentation extends Component {
                 uri='/health'
                 methods='GET'
                 description='A simple health endpoint to indicate that the server is up'
+                params=''
+            />
+        );
+        routes.push(
+            <RouteDoc
+                key='1'
+                uri='/dummy/random/int'
+                methods='GET'
+                description='Returns a random int between 0 and 100'
+                params='number - min; number - max'
             />
         );
 
@@ -27,17 +37,14 @@ class Documentation extends Component {
     render() {
         let routes = this.fetchRoutes();
         return (
-            <div>
-                <div className='main'>
-                    <div className='table'>
-                        <div className='table-header'>
-                            <span className='box column column-small'>Methods</span>
-                            <span className='box column column-med'>URI</span>
-                            <span className='box column column-med'>Description</span>
-                        </div>
-                        {routes}                
-                    </div>
+            <div className='column-large'>
+                <div className='wrapper table-header'>
+                    <span className='column column-small'>Methods</span>
+                    <span className='column column-small'>URI</span>
+                    <span className='column column-large'>Description</span>
+                    <span className='column column-med'>Params</span>
                 </div>
+                {routes}
             </div>
 
         );

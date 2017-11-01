@@ -14,7 +14,7 @@ class Message extends Component {
             message = 'Whoops! Something went wrong...';
 
         return (
-            <div className='body temp-message'>
+            <div className='column-large temp-message'>
                {message}
             </div>
         );
