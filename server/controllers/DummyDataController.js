@@ -1,11 +1,13 @@
 'use strict';
 
-let express = require('express');
-let router = express.Router();
-let bodyParser = require('body-parser');
-let DummyDataService = require('../service/DummyDataService');
+const express = require('express');
+const router = express.Router();
+const bodyParser = require('body-parser');
+const DummyDataService = require('../service/DummyDataService');
 
 const PATH = '/dummy';
+const CONTENT_TYPE = 'json';
+
 router.getPath = function() {
     return PATH;
 }
@@ -17,12 +19,17 @@ router.get('/random/int', (req, res) => {
     let max = req.query.max !== undefined && parseInt(req.query.max) ? parseInt(req.query.max) : 100;
 
     let randomInt = DummyDataService.getRandomInt(min, max);
-    let response = {};
-    response.int = randomInt;
-    response.min = min;
-    response.max = max;
+    let response = {
+        "int" : randomInt,
+        "min" : min,
+        "max" : max
+    };
 
-    res.status(200).send(JSON.stringify(response));
+    res.type(CONTENT_TYPE).status(200).send(JSON.stringify(response));
+});
+
+router.post('/parrot', (req, res) => {
+    res.type(CONTENT_TYPE).status(200).send(req.body);
 });
 
 module.exports = router;

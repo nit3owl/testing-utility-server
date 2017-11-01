@@ -1,0 +1,118 @@
+.header {
+  background-color: #222;
+  height: 40px;
+  padding: 10px;
+  color: white;
+}
+
+.body {
+  font-family: "Arial Black"
+}
+
+.footer {
+  background-color: #222;
+  height: 40px;
+  padding: 10px;
+  color: white;
+  position: fixed; 
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.table {
+  font-family: "Arial Black"
+}
+
+.table-header {
+  font-size: 24px;
+  font-weight: bold;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background: #56a8e2;
+}
+
+.table-row {
+  font-size: 16px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background: #ffff00;
+}
+
+.wrapper {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.box {
+  display: table-cell;
+}
+
+
+@media all and (min-width: 600px) {
+  .sidebar { 
+    flex: 1 auto; 
+    background: gray;
+    height: auto !important;
+    min-height: 100%;
+  }
+}
+
+.column-small {
+  -webkit-flex: 1 0 0;
+  flex: 2 0 0;
+}
+
+.column-med {
+  -webkit-flex: 2 0 0;
+  flex: 3 0 0;
+}
+
+.column-large {
+  -webkit-flex: 4 0 0;
+  flex: 8 0 0;
+}
+
+.nav-element:hover {
+  cursor: pointer;
+  color: #56a8e2;
+}
+
+.icon {
+  text-align: center;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.header-text {
+  vertical-align: middle;
+  font-family: "Arial Black";
+  font-size: 24px;
+}
+
+.temp-message {
+  font-size: 3em;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 20px;
+}
+
+.title {
+  font-size: 24px;
+}
+
+.intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

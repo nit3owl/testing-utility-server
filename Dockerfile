@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM node:alpine
 
 #install mongodb
 #RUN apk add --no-cache mongodb && \
@@ -7,16 +7,28 @@ FROM alpine:edge
 #VOLUME /data/db
 #EXPOSE 27017 28017
 
-#install nodejs and npm
-RUN apk add --update nodejs nodejs-npm
+#install libc6-compat
+RUN apk add --no-cache libc6-compat
 
-#copy package.json and install dependencies
-COPY server/package.json server/package.json
+#build express server
+COPY server/package.json /tus/server/package.json
+WORKDIR /tus/server
 RUN npm install
+
+#build react app
+COPY tus-front-end /tus
+WORKDIR /tus/tus-front-end
+RUN npm install
+RUN npm install react-scripts
+
+WORKDIR /tus
+
+COPY . .
+
+#create "production" build
+RUN npm run build
 
 #expose node server port
 EXPOSE 3000
-
-COPY . .
 
 ENTRYPOINT ["npm", "start", "--prefix", "server"]
