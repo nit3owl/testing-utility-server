@@ -1,10 +1,10 @@
 'use strict';
 
-const express = require('express');
-const router = express.Router();
-const bodyParser = require('body-parser');
-const DummyDataService = require('../service/DummyDataService');
+import express = require('express');
+import bodyParser = require('body-parser');
+import DummyDataService = require('../service/DummyDataService');
 
+const router = express.Router();
 const PATH = '/dummy';
 const CONTENT_TYPE = 'json';
 
@@ -32,4 +32,4 @@ router.post('/parrot', (req, res) => {
     res.type(CONTENT_TYPE).status(200).send(req.body);
 });
 
-module.exports = router;
+export default router;
