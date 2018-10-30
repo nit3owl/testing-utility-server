@@ -1,9 +1,10 @@
 'use strict';
 
-const express = require('express');
-const router = express.Router();
-const bodyParser = require('body-parser');
+import express = require('express');
+import bodyParser = require('body-parser');
 
+
+const router = express.Router();
 const CONTENT_TYPE = 'json';
 
 router.use(bodyParser.json());
@@ -21,4 +22,4 @@ router.get('/hello', (req, res) => {
     }   
 });
 
-module.exports = router;
+export default router;
